@@ -1,7 +1,7 @@
 <% if logged_in? %>
   <%= link_to 'logout', logout_path, method: :delete %>
   <div class='row'>
-    <div class='col-8'>
+    <div class='col-8 content-area'>
       <ol>
       <%= render @posts %>
       </ol>

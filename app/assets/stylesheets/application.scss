@@ -44,6 +44,10 @@ p {
 header {
   border-bottom: 1px solid gray;
   background-color: white;
+
+  li {
+    margin-left: 15px;
+  }
 }
 
 .header-icon {
@@ -69,8 +73,7 @@ input {
   margin-bottom: 15px;
 }
 
-.content-space {
-  border-left: 1px solid gray;
+.content-area {
   border-right: 1px solid gray;
 }
 

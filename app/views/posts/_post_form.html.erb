@@ -1,0 +1,9 @@
+<%= form_with(model: @post, local: true) do |f| %>
+<%= render 'layouts/error_messages', object: f.object %>
+
+<%= f.label :content %>
+<%= f.text_field :content, class: 'form-control' %>
+
+<%= f.submit yield(:button_name), class: 'btn btn-primary' %>
+
+<% end %>
