@@ -1,5 +1,10 @@
 <% if logged_in? %>
   <%= link_to 'logout', logout_path, method: :delete %>
+  <div class='row'>
+    <div class='col-7'>
+      <%= render @posts %>
+    </div>
+  </div>
 <% else %>
   <%= render template: 'sessions/new' %>
 <% end %>
