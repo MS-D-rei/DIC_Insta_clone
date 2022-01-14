@@ -1,0 +1,11 @@
+<li>
+  <div class='content'>
+    <span><%= post.user.name %> posted</span><br>
+    <span><%= post.content %></span>
+
+    <% if current_user?(post.user) %>
+      <%= link_to 'edit', '#' %>
+      <%= link_to 'delete', '#' %>
+    <% end %>
+  </div>
+</li>

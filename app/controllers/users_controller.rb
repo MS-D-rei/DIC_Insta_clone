@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i[edit update]
 
   def index
-    @posts = User.microposts
+    @posts = Post.all
   end
 
   def new
