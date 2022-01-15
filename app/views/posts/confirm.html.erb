@@ -1,0 +1,12 @@
+<h1 class='center-title'>Check content</h1>
+
+<div class='row justify-content-md-center'>
+ <div class='col-md-6'>
+  <%= form_with(model: @post, local: true) do |f| %>
+    <%= f.hidden_field :content %>
+    <%= @post.content %>
+    <%= f.submit 'Are you sure?', class: 'btn btn-primary' %>
+  <% end %>
+  <%= link_to 'Back', :back, class: 'btn btn-primary' %>
+ </div>
+</div>
