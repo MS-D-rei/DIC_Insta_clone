@@ -4,8 +4,8 @@
     <span><%= post.content %></span>
 
     <% if current_user?(post.user) %>
-      <%= link_to 'edit', '#' %>
-      <%= link_to 'delete', '#' %>
+      <%= link_to 'edit', edit_post_path(post) %>
+      <%= link_to 'delete', post, method: :delete, data: { confirm: 'You sure?' } %>
     <% end %>
   </div>
 </li>
