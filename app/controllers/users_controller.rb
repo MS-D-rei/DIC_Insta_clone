@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[edit update]
+  before_action :logged_in_user, only: %i[edit update favorites]
   before_action :correct_user, only: %i[edit update]
 
   def index
     @posts = Post.all
+    @favorites = current_user.favorites
   end
 
   def new
@@ -30,6 +31,11 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = @user.favorite_posts
   end
 
   private

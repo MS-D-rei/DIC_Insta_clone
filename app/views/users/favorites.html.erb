@@ -1,9 +1,7 @@
-<% if logged_in? %>
-  <%= link_to 'logout', logout_path, method: :delete %>
-  <div class='row'>
+<div class='row'>
     <div class='col-8 content-area'>
       <ol>
-      <%= render @posts %>
+      <%= render @favorites %>
       </ol>
     </div>
     <div class='col'>
@@ -11,9 +9,5 @@
         <%= image_tag current_user.image.url, class: 'profile-image' %><br>
         <% end %>
         <h5><%= current_user.name %></h5>
-        <%= link_to 'favorite_posts', favorites_user_path(current_user) %>
     </div>
   </div>
-<% else %>
-  <%= render template: 'sessions/new' %>
-<% end %>

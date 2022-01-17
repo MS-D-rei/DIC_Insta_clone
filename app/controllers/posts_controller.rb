@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   before_action :logged_in_user, only: %i[new create confirm edit update destroy]
   before_action :correct_user, only: %i[edit update destroy]
 
+  def show
+  end
+
   def new
     @post = current_user.posts.new
   end

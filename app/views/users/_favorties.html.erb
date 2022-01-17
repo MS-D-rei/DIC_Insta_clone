@@ -1,0 +1,10 @@
+<li>
+  <div class='content'>
+    <span><%= favorite.user.name %> posted</span><br>
+    <span><%= favorite.post.content %></span>
+
+    <%= image_tag favorite.post.image.url if favorite.post.image && favorite.post.image.url %>
+
+    <% link_to 'Unlike', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+  </div>
+</li>

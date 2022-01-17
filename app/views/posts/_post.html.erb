@@ -5,9 +5,15 @@
 
     <%= image_tag post.image.url if post.image && post.image.url %>
 
+    <% if @favorite = post.favorites.find_by(user_id: current_user.id) %>
+    <%= link_to 'Unlike', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+    <%= link_to 'Like', favorites_path(post_id: post.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+
     <% if current_user?(post.user) %>
-      <%= link_to 'edit', edit_post_path(post) %>
-      <%= link_to 'delete', post, method: :delete, data: { confirm: 'You sure?' } %>
+    <%= link_to 'edit', edit_post_path(post) %>
+    <%= link_to 'delete', post, method: :delete, data: { confirm: 'You sure?' } %>
     <% end %>
   </div>
 </li>

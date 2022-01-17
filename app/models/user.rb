@@ -2,6 +2,8 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
 
   mount_uploader :image, ImageUploader
 
