@@ -7,7 +7,9 @@
       </ol>
     </div>
     <div class='col'>
+        <% if current_user.image.file %>
         <%= image_tag current_user.image.url, class: 'profile-image' %><br>
+        <% end %>
         <h5><%= current_user.name %></h5>
     </div>
   </div>
