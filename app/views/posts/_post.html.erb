@@ -3,6 +3,8 @@
     <span><%= post.user.name %> posted</span><br>
     <span><%= post.content %></span>
 
+    <%= image_tag post.image.url if post.image && post.image.url %>
+
     <% if current_user?(post.user) %>
       <%= link_to 'edit', edit_post_path(post) %>
       <%= link_to 'delete', post, method: :delete, data: { confirm: 'You sure?' } %>

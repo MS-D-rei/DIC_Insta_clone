@@ -4,6 +4,8 @@
 <%= f.label :content %>
 <%= f.text_field :content, class: 'form-control' %>
 
+<%= f.file_field :image %>
+
 <%= f.submit yield(:button_name), class: 'btn btn-primary' %>
 <% end %>
 
