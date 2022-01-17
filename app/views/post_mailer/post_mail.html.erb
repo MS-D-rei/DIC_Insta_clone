@@ -1,0 +1,4 @@
+<h1>New content posted!</h1>
+<h4>name: <%= @post.user.name %> </h4>
+<p>content: <%= @post.content %></p>
+<%= image_tag @post.image.url if @post.image && @post.image.url %>

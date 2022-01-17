@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      PostMailer.post_mail(@post).deliver
       flash[:success] = 'Post created!'
       redirect_to root_url
     else
