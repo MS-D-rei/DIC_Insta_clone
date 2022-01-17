@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def index
     @posts = Post.all
-    @favorites = current_user.favorites
   end
 
   def new
